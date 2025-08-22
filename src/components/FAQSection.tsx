@@ -113,8 +113,7 @@ const FAQSection: React.FC = () => {
             </h2>
           </div>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Tire suas dúvidas sobre o MepChat e descubra como nossa plataforma
-            pode transformar o atendimento da sua empresa.
+            Tire suas dúvidas sobre o MepChat
           </p>
         </motion.div>
 
@@ -133,7 +132,7 @@ const FAQSection: React.FC = () => {
               >
                 <motion.button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-200"
+                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900"
                   whileHover={{ x: 5 }}
                 >
                   <div className="flex-1">

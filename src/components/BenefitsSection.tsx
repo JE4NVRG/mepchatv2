@@ -103,15 +103,11 @@ const BenefitsSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
-            Por que escolher o{' '}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              MepChat?
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+            Por que escolher o MepChat?
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Descubra como nossa plataforma pode revolucionar seu atendimento ao cliente
-            e aumentar suas vendas de forma significativa.
+            Descubra como nossa plataforma pode revolucionar seu atendimento e vendas
           </p>
         </motion.div>
 
@@ -137,7 +133,7 @@ const BenefitsSection: React.FC = () => {
 
               {/* Content */}
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
                   {benefit.title}
                 </h3>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed">

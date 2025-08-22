@@ -134,16 +134,10 @@ const PricingSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
-            Planos que se adaptam ao seu{' '}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              negócio
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+            Planos que se adaptam ao seu negócio
           </h2>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-4">
-            Escolha o plano ideal para sua empresa e comece a transformar seu atendimento hoje mesmo.
-          </p>
-          <p className="text-lg text-slate-700 dark:text-slate-200 font-medium mb-8">
+          <p className="text-xl text-slate-600 dark:text-slate-300 mb-2">
             Planos mensais, pré-pagos e sem fidelidade.
           </p>
 
@@ -184,28 +178,18 @@ const PricingSection: React.FC = () => {
                 }`}>
                   {plan.icon}
                 </div>
-                <h3 className={`text-2xl font-bold mb-2 ${
-                  plan.highlighted ? 'text-white' : 'text-slate-900 dark:text-slate-100'
-                }`}>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                   {plan.name}
                 </h3>
-                <p className={`text-sm mb-4 ${
-                  plan.highlighted ? 'text-white/80' : 'text-slate-600 dark:text-slate-300'
-                }`}>
+                <p className="text-slate-600 dark:text-slate-300 mb-6">
                   {plan.description}
                 </p>
-                <div className="flex items-baseline justify-center">
-                  <span className={`text-4xl font-bold ${
-                    plan.highlighted ? 'text-white' : 'text-slate-900 dark:text-slate-100'
-                  }`}>
-                    {plan.price}
-                  </span>
-                  <span className={`text-lg ml-1 ${
-                    plan.highlighted ? 'text-white/80' : 'text-slate-600 dark:text-slate-300'
-                  }`}>
-                    {plan.period}
-                  </span>
-                </div>
+                <span className="text-4xl font-bold text-slate-900 dark:text-slate-100">
+                  {plan.price}
+                </span>
+                <span className="text-slate-600 dark:text-slate-300 ml-2">
+                  /mês
+                </span>
                 {(plan.name === 'Start' || plan.name === 'Pro') && (
                   <>
                     <div className={`text-xs mt-2 ${
@@ -224,16 +208,10 @@ const PricingSection: React.FC = () => {
 
               {/* Features List */}
               <ul className="space-y-3 mb-8">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start">
-                    <Check className={`w-5 h-5 mr-3 mt-0.5 flex-shrink-0 ${
-                      plan.highlighted ? 'text-white' : 'text-primary'
-                    }`} />
-                    <span className={`text-sm ${
-                      plan.highlighted ? 'text-white' : 'text-slate-600 dark:text-slate-300'
-                    }`}>
-                      {feature}
-                    </span>
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start">
+                    <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-700 dark:text-slate-300">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -242,11 +220,10 @@ const PricingSection: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => handleCTAClick(plan.name, plan.ctaLink)}
-                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
-                  plan.highlighted
-                    ? 'bg-white text-primary hover:bg-gray-100'
-                    : 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg'
+                className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 ${
+                  plan.popular
+                    ? 'bg-primary text-white hover:bg-primary/90'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-700'
                 }`}
               >
                 {plan.ctaText}

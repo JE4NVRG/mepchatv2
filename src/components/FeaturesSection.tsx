@@ -118,15 +118,11 @@ const FeaturesSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
-            Recursos que fazem a{' '}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              diferença
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+            Funcionalidades Poderosas
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Descubra as funcionalidades avançadas que tornam o MepChat a escolha ideal
-            para empresas que buscam excelência no atendimento.
+            Tudo que você precisa para automatizar e otimizar seu atendimento no WhatsApp
           </p>
         </motion.div>
 
@@ -159,10 +155,10 @@ const FeaturesSection: React.FC = () => {
                     {feature.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+                    <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-300 mb-4">
+                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                       {feature.description}
                     </p>
                     <ul className="space-y-2">
@@ -213,7 +209,7 @@ const FeaturesSection: React.FC = () => {
                     transition={{ duration: 0.3 }}
                     className="w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center text-white"
                   >
-                    {React.cloneElement(features[activeFeature].icon as React.ReactElement<any>, {
+                    {React.cloneElement(features[activeFeature].icon as React.ReactElement<{ className?: string }>, {
                       className: 'w-12 h-12'
                     })}
                   </motion.div>

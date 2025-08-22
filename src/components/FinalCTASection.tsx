@@ -206,7 +206,7 @@ const FinalCTASection: React.FC = () => {
               onClick={handleStartTrial}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-2 min-w-[280px] justify-center"
+              className="group bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-2 min-w-[280px] justify-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
             >
               <span>Começar Teste Grátis Agora</span>
               <motion.div
@@ -221,7 +221,7 @@ const FinalCTASection: React.FC = () => {
               onClick={handleScheduleDemo}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 min-w-[280px]"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 min-w-[280px] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
             >
               Agendar Demonstração
             </motion.button>

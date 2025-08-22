@@ -4,9 +4,7 @@ import { Star, Users, MessageCircle, TrendingUp, Quote } from 'lucide-react';
 import { trackSectionView } from '../utils/analytics';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { formatMetric } from '../utils/format';
-import AnaSantosAvatar from '../assets/images/avatar-ana-santos.svg';
-import CarlosOliveiraAvatar from '../assets/images/avatar-carlos-oliveira.svg';
-import FernandaLimaAvatar from '../assets/images/avatar-fernanda-lima.svg';
+// Avatares SVG serão referenciados diretamente pelos caminhos públicos
 
 interface Metric {
   icon?: React.ReactNode;
@@ -58,28 +56,52 @@ const SocialProofSection: React.FC = () => {
 
   const testimonials: Testimonial[] = [
     {
-      name: "Ana Santos",
+      name: "Mariana Silva",
       role: "Gerente de Atendimento",
       company: "Loja Virtual Plus",
       content: "O MepChat revolucionou nosso atendimento! Conseguimos responder 3x mais rápido e nossos clientes estão muito mais satisfeitos. A automação de respostas é incrível!",
       rating: 5,
-      avatar: AnaSantosAvatar
+      avatar: "/testimonial-avatar-1.svg"
     },
     {
-      name: "Carlos Oliveira",
+      name: "João Santos",
       role: "CEO",
       company: "TechSolutions",
       content: "O sistema de relatórios do MepChat nos deu insights valiosos sobre nosso atendimento. Identificamos gargalos e melhoramos nossa eficiência em 40%.",
       rating: 5,
-      avatar: CarlosOliveiraAvatar
+      avatar: "/testimonial-avatar-2.svg"
     },
     {
-      name: "Fernanda Lima",
+      name: "Ana Costa",
       role: "Coordenadora",
       company: "Clínica Saúde+",
       content: "Para nossa clínica, o MepChat foi essencial. Conseguimos organizar agendamentos, enviar lembretes e manter contato próximo com nossos pacientes.",
       rating: 5,
-      avatar: FernandaLimaAvatar
+      avatar: "/testimonial-avatar-3.svg"
+    },
+    {
+      name: "Carlos Mendes",
+      role: "Diretor Comercial",
+      company: "AutoPeças Pro",
+      content: "Com o MepChat, conseguimos atender nossos clientes 24/7. O sistema de automação nos ajudou a aumentar as vendas em 35% no primeiro mês.",
+      rating: 5,
+      avatar: "/testimonial-avatar-4.svg"
+    },
+    {
+      name: "Fernanda Oliveira",
+      role: "Proprietária",
+      company: "Boutique Fashion",
+      content: "A integração com nosso e-commerce foi perfeita. Agora conseguimos acompanhar cada cliente desde o primeiro contato até a venda final.",
+      rating: 5,
+      avatar: "/testimonial-avatar-5.svg"
+    },
+    {
+      name: "Roberto Lima",
+      role: "Gerente de TI",
+      company: "Consultoria Digital",
+      content: "A segurança e confiabilidade do MepChat nos impressionaram. Nossos dados estão protegidos e o sistema nunca falha.",
+      rating: 5,
+      avatar: "/testimonial-avatar-6.svg"
     }
   ];
 
@@ -133,10 +155,10 @@ const SocialProofSection: React.FC = () => {
         <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center text-white mx-auto mb-4">
           {getIcon(index)}
         </div>
-        <div className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+        <div className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
           {formatMetric(animatedValue, metric.suffix)}
         </div>
-        <p className="text-slate-600 dark:text-slate-400 font-medium">
+        <p className="text-slate-600 dark:text-slate-300 font-medium">
           {metric.label}
         </p>
       </motion.div>
@@ -161,7 +183,7 @@ const SocialProofSection: React.FC = () => {
       </div>
       
       {/* Content */}
-      <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+      <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
         "{testimonial.content}"
       </p>
       
@@ -170,14 +192,14 @@ const SocialProofSection: React.FC = () => {
         <img 
           src={testimonial.avatar} 
           alt={`Avatar de ${testimonial.name}`}
-          className="w-12 h-12 rounded-full mr-4"
+          className="h-10 w-10 rounded-full ring-2 ring-white/60 dark:ring-slate-700 mr-4"
         />
         <div>
           <h4 className="font-semibold text-slate-900 dark:text-slate-100">
             {testimonial.name}
           </h4>
           <p className="text-sm text-slate-600 dark:text-slate-400">
-            {testimonial.role} • {testimonial.company}
+            {testimonial.role} - {testimonial.company}
           </p>
         </div>
       </div>
@@ -227,7 +249,7 @@ const SocialProofSection: React.FC = () => {
             O que nossos clientes dizem
           </h3>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Depoimentos reais de empresas que transformaram seu atendimento com o MepChat
+            Veja como o MepChat está transformando negócios em todo o Brasil
           </p>
         </motion.div>
 

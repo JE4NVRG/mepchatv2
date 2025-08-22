@@ -234,7 +234,7 @@ const TargetAudienceSection: React.FC = () => {
               <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">
                 {segment.title}
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-sm text-slate-600 dark:text-slate-300">
                 {segment.description}
               </p>
             </motion.div>
@@ -262,7 +262,7 @@ const TargetAudienceSection: React.FC = () => {
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
                     {segments[activeSegment].title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400">
+                  <p className="text-slate-600 dark:text-slate-300">
                     {segments[activeSegment].description}
                   </p>
                 </div>
@@ -346,7 +346,7 @@ const TargetAudienceSection: React.FC = () => {
                 onClick={() => {
                   window.open('https://mepchat.agenciamep.com/contato', '_blank');
                 }}
-                className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
               >
                 Falar com Especialista
               </motion.button>
@@ -356,7 +356,7 @@ const TargetAudienceSection: React.FC = () => {
                 onClick={() => {
                   window.open('https://mepchat.agenciamep.com/cadastro', '_blank');
                 }}
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
               >
                 Teste Grátis Agora
               </motion.button>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Zap, ArrowRight, X } from 'lucide-react';
-import { trackCTAClick, trackSectionView } from '../utils/analytics';
+import { Zap, X } from 'lucide-react';
+import { trackSectionView } from '../utils/analytics';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const HeroSection: React.FC = () => {
@@ -10,18 +10,15 @@ const HeroSection: React.FC = () => {
 
   React.useEffect(() => {
     if (isVisible) {
-      trackSectionView('Hero');
+      trackSectionView('Hero Section');
     }
   }, [isVisible]);
 
-  const handlePrimaryCTA = () => {
-    trackCTAClick('Testar grátis por 5 dias', 'Hero Primary');
-    window.open('https://mepchat.agenciamep.com/cadastro', '_blank');
-  };
-
-  const handleSecondaryCTA = () => {
-    trackCTAClick('Falar com especialista', 'Hero Secondary');
-    window.open('https://wa.me/SEU_NUMERO?text=Quero%20testar%20o%20MepChat', '_blank');
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const containerVariants = {
@@ -105,22 +102,20 @@ const HeroSection: React.FC = () => {
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 dark:text-slate-100 mb-6 leading-tight"
           >
-            Transforme seu{' '}
+            Transforme seu <span className="text-primary">WhatsApp</span> em uma
+            <br />
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              WhatsApp
-            </span>{' '}
-            em uma central de vendas
+              máquina de vendas
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
             variants={itemVariants}
-            className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Gerencie múltiplos atendentes, organize setores e aumente suas vendas com o MepChat.
-            <span className="block mt-2 font-semibold text-primary">
-              ✓ Funciona com CPF e CNPJ • ✓ Teste grátis por 5 dias
-            </span>
+            Automatize conversas, qualifique leads e aumente suas vendas com nossa
+            plataforma de chatbot inteligente para WhatsApp Business.
           </motion.p>
 
           {/* Key Benefits */}
@@ -149,23 +144,19 @@ const HeroSection: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={handlePrimaryCTA}
-              className="btn-primary px-8 py-4 text-lg font-semibold flex items-center group"
+              className="btn-primary mr-4 mb-4 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900"
+              onClick={() => scrollToSection('pricing')}
             >
-              Testar grátis por 5 dias
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Começar Agora
             </motion.button>
 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleSecondaryCTA}
-              className="flex items-center px-8 py-4 text-lg font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors group"
+              className="btn-outline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900"
+              onClick={() => scrollToSection('features')}
             >
-              <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center mr-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                <MessageCircle className="w-5 h-5 text-primary" />
-              </div>
-              Falar com especialista
+              Ver Funcionalidades
             </motion.button>
           </motion.div>
 
