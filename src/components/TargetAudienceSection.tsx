@@ -231,7 +231,7 @@ const TargetAudienceSection: React.FC = () => {
               <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${segment.color} flex items-center justify-center text-white mb-4`}>
                 {segment.icon}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                 {segment.title}
               </h3>
               <p className="text-sm text-slate-600 dark:text-slate-300">
@@ -259,7 +259,7 @@ const TargetAudienceSection: React.FC = () => {
                   })}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                  <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
                     {segments[activeSegment].title}
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300">
@@ -269,7 +269,7 @@ const TargetAudienceSection: React.FC = () => {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
+                <h4 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
                   Casos de Uso Principais:
                 </h4>
                 <ul className="space-y-2">
@@ -283,7 +283,7 @@ const TargetAudienceSection: React.FC = () => {
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
+                <h4 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
                   Benefícios Comprovados:
                 </h4>
                 <ul className="space-y-2">
@@ -332,7 +332,7 @@ const TargetAudienceSection: React.FC = () => {
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-3xl font-bold mb-4">
               Não encontrou seu segmento?
             </h3>
             <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">

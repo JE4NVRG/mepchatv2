@@ -155,7 +155,7 @@ const FeaturesSection: React.FC = () => {
                     {feature.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">
                       {feature.title}
                     </h3>
                     <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -222,7 +222,7 @@ const FeaturesSection: React.FC = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <h4 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">
+                <h4 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-3">
                   {features[activeFeature].title}
                 </h4>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -241,7 +241,7 @@ const FeaturesSection: React.FC = () => {
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-3xl font-bold mb-4">
               Experimente todos os recursos gratuitamente
             </h3>
             <p className="text-lg opacity-90 mb-6">

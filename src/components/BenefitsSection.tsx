@@ -94,7 +94,7 @@ const BenefitsSection: React.FC = () => {
     <section
       id="benefits"
       ref={ref}
-      className="py-20 bg-white dark:bg-slate-800"
+      className="py-16 bg-slate-50 dark:bg-slate-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -122,7 +122,7 @@ const BenefitsSection: React.FC = () => {
               key={index}
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="card group cursor-pointer"
+              className="card group cursor-pointer min-h-[280px] flex flex-col"
             >
               {/* Icon */}
               <div className="mb-6">
@@ -133,10 +133,10 @@ const BenefitsSection: React.FC = () => {
 
               {/* Content */}
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

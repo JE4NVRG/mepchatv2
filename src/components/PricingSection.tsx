@@ -125,7 +125,7 @@ const PricingSection: React.FC = () => {
     <section
       id="pricing"
       ref={ref}
-      className="py-20 bg-white dark:bg-slate-800"
+      className="py-16 bg-white dark:bg-slate-900"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -154,7 +154,7 @@ const PricingSection: React.FC = () => {
               key={index}
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.02 }}
-              className={`relative rounded-2xl p-8 transition-all duration-300 ${
+              className={`relative rounded-2xl p-8 transition-all duration-300 min-h-[480px] flex flex-col ${
                 plan.highlighted
                   ? 'bg-gradient-to-b from-blue-600 to-green-500 shadow-2xl scale-105'
                   : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl'
@@ -182,7 +182,7 @@ const PricingSection: React.FC = () => {
                 }`}>
                   {plan.icon}
                 </div>
-                <h3 className={`text-2xl font-bold mb-2 ${
+                <h3 className={`text-3xl font-bold mb-2 ${
                   plan.highlighted
                     ? 'text-white dark:text-slate-100'
                     : 'text-slate-900 dark:text-slate-100'
@@ -196,7 +196,7 @@ const PricingSection: React.FC = () => {
                 }`}>
                   {plan.description}
                 </p>
-                <span className={`text-4xl font-bold ${
+                <span className={`text-5xl font-bold ${
                   plan.highlighted
                     ? 'text-white dark:text-slate-100'
                     : 'text-slate-900 dark:text-slate-100'
