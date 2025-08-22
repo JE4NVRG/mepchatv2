@@ -61,7 +61,7 @@ const SocialProofSection: React.FC = () => {
       company: "Loja Virtual Plus",
       content: "O MepChat revolucionou nosso atendimento! Conseguimos responder 3x mais rápido e nossos clientes estão muito mais satisfeitos. A automação de respostas é incrível!",
       rating: 5,
-      avatar: "/testimonial-avatar-1.svg"
+      avatar: "/testimonials/mariana.jpg"
     },
     {
       name: "João Santos",
@@ -69,7 +69,7 @@ const SocialProofSection: React.FC = () => {
       company: "TechSolutions",
       content: "O sistema de relatórios do MepChat nos deu insights valiosos sobre nosso atendimento. Identificamos gargalos e melhoramos nossa eficiência em 40%.",
       rating: 5,
-      avatar: "/testimonial-avatar-2.svg"
+      avatar: "/testimonials/joao.jpg"
     },
     {
       name: "Ana Costa",
@@ -77,7 +77,7 @@ const SocialProofSection: React.FC = () => {
       company: "Clínica Saúde+",
       content: "Para nossa clínica, o MepChat foi essencial. Conseguimos organizar agendamentos, enviar lembretes e manter contato próximo com nossos pacientes.",
       rating: 5,
-      avatar: "/testimonial-avatar-3.svg"
+      avatar: "/testimonials/ana.jpg"
     },
     {
       name: "Carlos Mendes",
@@ -85,7 +85,7 @@ const SocialProofSection: React.FC = () => {
       company: "AutoPeças Pro",
       content: "Com o MepChat, conseguimos atender nossos clientes 24/7. O sistema de automação nos ajudou a aumentar as vendas em 35% no primeiro mês.",
       rating: 5,
-      avatar: "/testimonial-avatar-4.svg"
+      avatar: "/testimonials/carlos.jpg"
     },
     {
       name: "Fernanda Oliveira",
@@ -93,7 +93,7 @@ const SocialProofSection: React.FC = () => {
       company: "Boutique Fashion",
       content: "A integração com nosso e-commerce foi perfeita. Agora conseguimos acompanhar cada cliente desde o primeiro contato até a venda final.",
       rating: 5,
-      avatar: "/testimonial-avatar-5.svg"
+      avatar: "/testimonials/fernanda.jpg"
     },
     {
       name: "Roberto Lima",
@@ -101,7 +101,7 @@ const SocialProofSection: React.FC = () => {
       company: "Consultoria Digital",
       content: "A segurança e confiabilidade do MepChat nos impressionaram. Nossos dados estão protegidos e o sistema nunca falha.",
       rating: 5,
-      avatar: "/testimonial-avatar-6.svg"
+      avatar: "/testimonials/roberto.jpg"
     }
   ];
 
@@ -136,7 +136,7 @@ const SocialProofSection: React.FC = () => {
 
         requestAnimationFrame(updateValue);
       }
-    }, [isVisible, metric.value]);
+    }, [metric.value]);
 
     const getIcon = (index: number) => {
       const icons = [MessageCircle, Users, Star, TrendingUp];
@@ -155,10 +155,10 @@ const SocialProofSection: React.FC = () => {
         <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center text-white mx-auto mb-4">
           {getIcon(index)}
         </div>
-        <div className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+        <div className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-2">
           {formatMetric(animatedValue, metric.suffix)}
         </div>
-        <p className="text-slate-600 dark:text-slate-300 font-medium">
+        <p className="text-lg text-slate-600 dark:text-slate-300 font-semibold">
           {metric.label}
         </p>
       </motion.div>
@@ -167,12 +167,12 @@ const SocialProofSection: React.FC = () => {
 
   const TestimonialCard: React.FC<{ testimonial: Testimonial; index: number }> = ({ testimonial, index }) => (
     <motion.div
-      initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
-      animate={isVisible ? { x: 0, opacity: 1 } : { x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 + (index * 0.1) }}
-      whileHover={{ y: -5 }}
-      className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative"
-    >
+        initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
+        animate={isVisible ? { x: 0, opacity: 1 } : { x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 + (index * 0.1) }}
+        whileHover={{ y: -5, scale: 1.02 }}
+        className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative min-h-[240px] flex flex-col border border-slate-200 dark:border-slate-700"
+      >
       <Quote className="w-8 h-8 text-primary/20 absolute top-4 right-4" />
       
       {/* Rating */}
@@ -183,7 +183,7 @@ const SocialProofSection: React.FC = () => {
       </div>
       
       {/* Content */}
-      <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+      <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed flex-grow">
         "{testimonial.content}"
       </p>
       
@@ -192,7 +192,7 @@ const SocialProofSection: React.FC = () => {
         <img 
           src={testimonial.avatar} 
           alt={`Avatar de ${testimonial.name}`}
-          className="h-10 w-10 rounded-full ring-2 ring-white/60 dark:ring-slate-700 mr-4"
+          className="h-12 w-12 rounded-full ring-2 ring-primary-500 mr-4 object-cover"
         />
         <div>
           <h4 className="font-semibold text-slate-900 dark:text-slate-100">
@@ -210,7 +210,7 @@ const SocialProofSection: React.FC = () => {
     <section
       id="social-proof"
       ref={ref}
-      className="py-20 bg-white dark:bg-slate-900"
+      className="py-16 bg-white dark:bg-slate-900"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -232,7 +232,7 @@ const SocialProofSection: React.FC = () => {
         </motion.div>
 
         {/* Metrics */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {metrics.map((metric, index) => (
             <MetricCard key={index} metric={metric} index={index} />
           ))}
@@ -245,7 +245,7 @@ const SocialProofSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mb-12"
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+          <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             O que nossos clientes dizem
           </h3>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
@@ -254,7 +254,7 @@ const SocialProofSection: React.FC = () => {
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} index={index} />
           ))}
