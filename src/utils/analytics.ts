@@ -1,11 +1,19 @@
 // Google Analytics 4
-export const gtag = (...args: any[]) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag(...args);
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
+export const gtag = (...args: unknown[]) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag(...args);
   }
 };
 
-export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
+export const trackEvent = (eventName: string, parameters?: Record<string, string | number | boolean>) => {
   gtag('event', eventName, parameters);
 };
 
@@ -16,20 +24,23 @@ export const trackPageView = (pagePath: string) => {
 };
 
 // Meta Pixel
-export const fbq = (...args: any[]) => {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq(...args);
+export const fbq = (...args: unknown[]) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq(...args);
   }
 };
 
-export const trackFacebookEvent = (eventName: string, parameters?: Record<string, any>) => {
+export const trackFacebookEvent = (eventName: string, parameters?: Record<string, string | number | boolean>) => {
   fbq('track', eventName, parameters);
 };
 
 // Hotjar
-export const hj = (...args: any[]) => {
-  if (typeof window !== 'undefined' && (window as any).hj) {
-    (window as any).hj(...args);
+export const hj = (...args: unknown[]) => {
+  if (typeof window !== 'undefined') {
+    const windowWithHj = window as Window & { hj?: (...args: unknown[]) => void };
+    if (windowWithHj.hj) {
+      windowWithHj.hj(...args);
+    }
   }
 };
 
