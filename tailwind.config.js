@@ -49,6 +49,7 @@ export default {
         'slide-up': 'slideUp 0.6s ease-out',
         'bounce-gentle': 'bounceGentle 2s infinite',
         'counter': 'counter 2s ease-out',
+        'gradient-x': 'gradient-x 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -66,6 +67,10 @@ export default {
         counter: {
           '0%': { transform: 'scale(0.8)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        'gradient-x': {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
         },
       },
     },

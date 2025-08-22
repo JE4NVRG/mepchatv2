@@ -59,7 +59,7 @@ const HeroSection: React.FC = () => {
     <section
       id="hero"
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden pt-16"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-hidden pt-16"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -102,10 +102,8 @@ const HeroSection: React.FC = () => {
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 dark:text-slate-100 mb-6 leading-tight"
           >
-            Transforme seu <span className="text-primary">WhatsApp</span> em uma
-            <br />
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              máquina de vendas
+            <span className="bg-gradient-to-r from-blue-500 via-green-500 to-blue-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">
+              Transforme seu WhatsApp em uma máquina de vendas
             </span>
           </motion.h1>
 
@@ -166,14 +164,14 @@ const HeroSection: React.FC = () => {
             className="text-center text-slate-600 dark:text-slate-300"
           >
             <p className="text-sm mb-4">Mais de 400 empresas já confiam no MepChat</p>
-            <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-2xl font-bold">+65k</div>
+            <div className="flex justify-center items-center space-x-8 opacity-70">
+              <div className="text-3xl font-bold">+65k</div>
               <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
-              <div className="text-2xl font-bold">+400</div>
+              <div className="text-3xl font-bold">+400</div>
               <div className="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
-              <div className="text-2xl font-bold">97%</div>
+              <div className="text-3xl font-bold">97%</div>
             </div>
-            <div className="flex justify-center items-center space-x-8 text-xs mt-2">
+            <div className="flex justify-center items-center space-x-8 text-sm font-medium mt-2">
               <div>Atendimentos</div>
               <div className="w-px h-4 bg-gray-300 dark:bg-gray-600"></div>
               <div>Clientes</div>
