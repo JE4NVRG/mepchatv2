@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRightLeft, MessageSquare, Star, QrCode, BarChart3, Play } from 'lucide-react';
+import { ArrowRightLeft, MessageSquare, Smartphone, BarChart3, Play, Users } from 'lucide-react';
 import { trackSectionView } from '../utils/analytics';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -25,59 +25,59 @@ const FeaturesSection: React.FC = () => {
 
   const features: Feature[] = [
     {
-      icon: <ArrowRightLeft className="w-6 h-6" />,
-      title: "Transferência Inteligente",
-      description: "Transfira conversas entre atendentes com contexto completo e histórico preservado",
+      icon: <Smartphone className="w-6 h-6" />,
+      title: "Conexão via QR Code ou API WhatsApp",
+      description: "Conecte rapidamente pelo QR Code (WhatsApp Web) ou pela API oficial do WhatsApp quando disponível. Sem complicação.",
       benefits: [
-        "Transferência sem perda de contexto",
-        "Notificações automáticas",
-        "Histórico completo preservado",
-        "Roteamento por especialidade"
+        "Conexão rápida via QR Code",
+        "WhatsApp Web integrado",
+        "API oficial quando disponível",
+        "Configuração simples"
       ],
       videoDemo: true
     },
     {
-      icon: <MessageSquare className="w-6 h-6" />,
-      title: "Respostas Rápidas",
-      description: "Crie templates personalizados e responda seus clientes em segundos",
+      icon: <Users className="w-6 h-6" />,
+      title: "Mesmo atendente em vários números",
+      description: "Um operador pode atender múltiplas linhas quando você contrata conexões extras.",
       benefits: [
-        "Templates personalizáveis",
+        "Múltiplas linhas por atendente",
+        "Conexões extras disponíveis",
+        "Eficiência operacional",
+        "Gestão centralizada"
+      ]
+    },
+    {
+      icon: <ArrowRightLeft className="w-6 h-6" />,
+      title: "Transferência de conversas",
+      description: "Redirecione entre setores em 1 clique",
+      benefits: [
+        "Transferência em 1 clique",
+        "Roteamento entre setores",
+        "Contexto preservado",
+        "Notificações automáticas"
+      ]
+    },
+    {
+      icon: <MessageSquare className="w-6 h-6" />,
+      title: "Respostas rápidas",
+      description: "Ganhe agilidade em orçamentos e dúvidas frequentes",
+      benefits: [
+        "Templates para orçamentos",
+        "Respostas pré-definidas",
         "Atalhos de teclado",
-        "Variáveis dinâmicas",
         "Biblioteca compartilhada"
       ]
     },
     {
-      icon: <Star className="w-6 h-6" />,
-      title: "Sistema de Avaliações",
-      description: "Colete feedback dos clientes e monitore a qualidade do seu atendimento",
-      benefits: [
-        "Avaliação por estrelas",
-        "Comentários detalhados",
-        "Métricas de satisfação",
-        "Relatórios de qualidade"
-      ]
-    },
-    {
-      icon: <QrCode className="w-6 h-6" />,
-      title: "QR Code Personalizado",
-      description: "Gere QR Codes únicos para facilitar o contato direto com seus clientes",
-      benefits: [
-        "QR Code personalizado",
-        "Link direto para WhatsApp",
-        "Rastreamento de origem",
-        "Múltiplos códigos por setor"
-      ]
-    },
-    {
       icon: <BarChart3 className="w-6 h-6" />,
-      title: "Relatórios Avançados",
-      description: "Analise métricas detalhadas e tome decisões baseadas em dados reais",
+      title: "Relatórios simples",
+      description: "Acompanhe volume, tempo e qualidade do atendimento",
       benefits: [
-        "Dashboard em tempo real",
-        "Métricas de performance",
-        "Relatórios personalizados",
-        "Exportação para Excel/PDF"
+        "Métricas de volume",
+        "Tempo de resposta",
+        "Qualidade do atendimento",
+        "Relatórios práticos"
       ]
     }
   ];
@@ -109,7 +109,7 @@ const FeaturesSection: React.FC = () => {
     <section
       id="features"
       ref={ref}
-      className="py-20 bg-gray-50 dark:bg-gray-800"
+      className="py-20 bg-slate-50 dark:bg-slate-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -118,13 +118,13 @@ const FeaturesSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
             Recursos que fazem a{' '}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               diferença
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Descubra as funcionalidades avançadas que tornam o MepChat a escolha ideal
             para empresas que buscam excelência no atendimento.
           </p>
@@ -144,8 +144,8 @@ const FeaturesSection: React.FC = () => {
                 variants={featureVariants}
                 className={`p-6 rounded-xl cursor-pointer transition-all duration-300 ${
                   activeFeature === index
-                    ? 'bg-white dark:bg-gray-900 shadow-lg border-l-4 border-primary'
-                    : 'bg-white/50 dark:bg-gray-900/50 hover:bg-white dark:hover:bg-gray-900'
+                    ? 'bg-white dark:bg-slate-800 shadow-lg border-l-4 border-primary'
+                    : 'bg-white/50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800'
                 }`}
                 onClick={() => setActiveFeature(index)}
                 whileHover={{ x: 10 }}
@@ -154,22 +154,22 @@ const FeaturesSection: React.FC = () => {
                   <div className={`p-3 rounded-lg transition-colors duration-300 ${
                     activeFeature === index
                       ? 'bg-gradient-to-r from-primary to-secondary text-white'
-                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'
+                      : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
                   }`}>
                     {feature.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    <p className="text-slate-600 dark:text-slate-300 mb-4">
                       {feature.description}
                     </p>
                     <ul className="space-y-2">
                       {feature.benefits.map((benefit, benefitIndex) => (
                         <li
                           key={benefitIndex}
-                          className="flex items-center text-sm text-gray-600 dark:text-gray-400"
+                          className="flex items-center text-sm text-slate-600 dark:text-slate-400"
                         >
                           <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
                           <span>{benefit}</span>
@@ -189,7 +189,7 @@ const FeaturesSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="lg:sticky lg:top-8"
           >
-            <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
               <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
                 {features[activeFeature].videoDemo ? (
                   <motion.div
@@ -201,7 +201,7 @@ const FeaturesSection: React.FC = () => {
                     <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 cursor-pointer hover:bg-white/30 transition-colors">
                       <Play className="w-8 h-8 text-primary ml-1" />
                     </div>
-                    <p className="text-gray-600 dark:text-gray-300 font-medium">
+                    <p className="text-slate-600 dark:text-slate-300 font-medium">
                       Clique para ver demonstração
                     </p>
                   </motion.div>
@@ -226,10 +226,10 @@ const FeaturesSection: React.FC = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                <h4 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">
                   {features[activeFeature].title}
                 </h4>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                   {features[activeFeature].description}
                 </p>
               </motion.div>
@@ -249,7 +249,7 @@ const FeaturesSection: React.FC = () => {
               Experimente todos os recursos gratuitamente
             </h3>
             <p className="text-lg opacity-90 mb-6">
-              Teste todas as funcionalidades por 7 dias, sem compromisso
+              Teste todas as funcionalidades por 5 dias, sem compromisso
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

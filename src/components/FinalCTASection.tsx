@@ -34,7 +34,7 @@ const FinalCTASection: React.FC = () => {
 
   const handleStartTrial = () => {
     trackCTAClick('final-cta-start-trial', 'Final CTA Section');
-    window.open('https://mepchat.agenciamep.com/trial', '_blank');
+    window.open('https://mepchat.agenciamep.com/cadastro', '_blank');
   };
 
   const handleScheduleDemo = () => {

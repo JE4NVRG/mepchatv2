@@ -28,66 +28,68 @@ const PricingSection: React.FC = () => {
 
   const plans: PricingPlan[] = [
     {
-      name: "Starter",
-      price: "R$ 89",
+      name: "Start",
+      price: "R$ 299",
       period: "/mês",
       description: "Ideal para pequenos negócios que estão começando",
       icon: <Zap className="w-6 h-6" />,
       features: [
-        "Até 2 atendentes",
-        "1.000 mensagens/mês",
-        "Respostas rápidas básicas",
-        "Relatórios simples",
-        "Suporte por email",
-        "Integração WhatsApp"
+        "5 atendentes inclusos",
+        "1 número de WhatsApp",
+        "CPF ou CNPJ",
+        "Troca de número quando precisar",
+        "Todos os recursos da plataforma",
+        "Respostas rápidas",
+        "Transferência de conversas",
+        "Relatórios básicos",
+        "Suporte por email"
       ],
-      ctaText: "Começar Agora",
-      ctaLink: "https://mepchat.agenciamep.com/cadastro?plan=starter"
+      ctaText: "Testar grátis 5 dias",
+      ctaLink: "https://mepchat.agenciamep.com/cadastro"
     },
     {
-      name: "Professional",
-      price: "R$ 160",
+      name: "Pro",
+      price: "R$ 459",
       period: "/mês",
       description: "A escolha perfeita para empresas em crescimento",
       icon: <Star className="w-6 h-6" />,
       features: [
-        "Até 5 atendentes",
-        "5.000 mensagens/mês",
-        "Respostas rápidas avançadas",
-        "Transferência inteligente",
-        "Sistema de avaliações",
-        "QR Code personalizado",
+        "Até 10 atendentes",
+        "2 números de WhatsApp",
+        "Setores ilimitados",
         "Relatórios avançados",
-        "Histórico ilimitado",
-        "Identificação CPF/CNPJ",
-        "Suporte prioritário",
-        "Integração com CRM"
+        "Avaliação de atendentes",
+        "CPF e CNPJ",
+        "Histórico completo",
+        "Transferência inteligente",
+        "Respostas rápidas avançadas",
+        "Suporte prioritário"
       ],
       highlighted: true,
       popular: true,
-      ctaText: "Teste Grátis por 7 Dias",
-      ctaLink: "https://mepchat.agenciamep.com/cadastro?plan=professional"
+      ctaText: "Falar com especialista",
+      ctaLink: "https://wa.me/SEU_NUMERO?text=Quero%20saber%20mais%20sobre%20o%20MepChat"
     },
     {
-      name: "Enterprise",
-      price: "R$ 299",
-      period: "/mês",
+      name: "Business",
+      price: "Sob consulta",
+      period: "",
       description: "Solução completa para grandes empresas",
       icon: <Crown className="w-6 h-6" />,
       features: [
+        "Multi-número",
         "Atendentes ilimitados",
-        "Mensagens ilimitadas",
-        "Todos os recursos Professional",
+        "Relatórios completos",
+        "Suporte prioritário",
+        "Onboarding assistido",
         "API personalizada",
         "Integração com sistemas próprios",
-        "Relatórios personalizados",
-        "Suporte 24/7",
         "Gerente de conta dedicado",
         "Treinamento da equipe",
         "SLA garantido"
       ],
-      ctaText: "Falar com Vendas",
-      ctaLink: "https://mepchat.agenciamep.com/contato?plan=enterprise"
+      ctaText: "Falar com especialista",
+      ctaLink: "https://wa.me/SEU_NUMERO?text=Quero%20saber%20mais%20sobre%20o%20MepChat"
     }
   ];
 
@@ -123,7 +125,7 @@ const PricingSection: React.FC = () => {
     <section
       id="pricing"
       ref={ref}
-      className="py-20 bg-white dark:bg-gray-900"
+      className="py-20 bg-white dark:bg-slate-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -132,26 +134,19 @@ const PricingSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
             Planos que se adaptam ao seu{' '}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               negócio
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-4">
             Escolha o plano ideal para sua empresa e comece a transformar seu atendimento hoje mesmo.
-            Todos os planos incluem teste gratuito de 7 dias.
           </p>
-          
-          {/* Pricing Toggle */}
-          <div className="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
-            <button className="px-4 py-2 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-medium shadow-sm">
-              Mensal
-            </button>
-            <button className="px-4 py-2 rounded-md text-gray-600 dark:text-gray-400 font-medium">
-              Anual (2 meses grátis)
-            </button>
-          </div>
+          <p className="text-lg text-slate-700 dark:text-slate-200 font-medium mb-8">
+            Planos mensais, pré-pagos e sem fidelidade.
+          </p>
+
         </motion.div>
 
         <motion.div
@@ -168,14 +163,14 @@ const PricingSection: React.FC = () => {
               className={`relative rounded-2xl p-8 transition-all duration-300 ${
                 plan.highlighted
                   ? 'bg-gradient-to-b from-primary to-secondary text-white shadow-2xl scale-105'
-                  : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl'
+                  : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl'
               }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    Mais Popular
+                    Recomendado
                   </div>
                 </div>
               )}
@@ -190,27 +185,41 @@ const PricingSection: React.FC = () => {
                   {plan.icon}
                 </div>
                 <h3 className={`text-2xl font-bold mb-2 ${
-                  plan.highlighted ? 'text-white' : 'text-gray-900 dark:text-white'
+                  plan.highlighted ? 'text-white' : 'text-slate-900 dark:text-slate-100'
                 }`}>
                   {plan.name}
                 </h3>
                 <p className={`text-sm mb-4 ${
-                  plan.highlighted ? 'text-white/80' : 'text-gray-600 dark:text-gray-400'
+                  plan.highlighted ? 'text-white/80' : 'text-slate-600 dark:text-slate-300'
                 }`}>
                   {plan.description}
                 </p>
                 <div className="flex items-baseline justify-center">
                   <span className={`text-4xl font-bold ${
-                    plan.highlighted ? 'text-white' : 'text-gray-900 dark:text-white'
+                    plan.highlighted ? 'text-white' : 'text-slate-900 dark:text-slate-100'
                   }`}>
                     {plan.price}
                   </span>
                   <span className={`text-lg ml-1 ${
-                    plan.highlighted ? 'text-white/80' : 'text-gray-600 dark:text-gray-400'
+                    plan.highlighted ? 'text-white/80' : 'text-slate-600 dark:text-slate-300'
                   }`}>
                     {plan.period}
                   </span>
                 </div>
+                {(plan.name === 'Start' || plan.name === 'Pro') && (
+                  <>
+                    <div className={`text-xs mt-2 ${
+                      plan.highlighted ? 'text-white/70' : 'text-slate-500 dark:text-slate-400'
+                    }`}>
+                      Add-ons: Conexão extra R$150 • Usuário extra R$35
+                    </div>
+                    <div className={`text-xs mt-1 ${
+                      plan.highlighted ? 'text-white/70' : 'text-slate-500 dark:text-slate-400'
+                    }`}>
+                      O mesmo atendente pode atuar em vários números (com conexões extras).
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Features List */}
@@ -221,7 +230,7 @@ const PricingSection: React.FC = () => {
                       plan.highlighted ? 'text-white' : 'text-primary'
                     }`} />
                     <span className={`text-sm ${
-                      plan.highlighted ? 'text-white' : 'text-gray-600 dark:text-gray-300'
+                      plan.highlighted ? 'text-white' : 'text-slate-600 dark:text-slate-300'
                     }`}>
                       {feature}
                     </span>
@@ -253,11 +262,11 @@ const PricingSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">
               Precisa de algo personalizado?
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
               Entre em contato conosco para criar um plano sob medida para sua empresa.
               Oferecemos soluções personalizadas para grandes volumes e necessidades específicas.
             </p>
@@ -289,7 +298,7 @@ const PricingSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 1 }}
           className="text-center mt-12"
         >
-          <div className="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+          <div className="inline-flex items-center space-x-2 text-slate-600 dark:text-slate-300">
             <Check className="w-5 h-5 text-green-500" />
             <span className="font-medium">Garantia de 30 dias ou seu dinheiro de volta</span>
           </div>

@@ -188,7 +188,7 @@ const TargetAudienceSection: React.FC = () => {
     <section
       id="target-audience"
       ref={ref}
-      className="py-20 bg-gray-50 dark:bg-gray-800"
+      className="py-20 bg-slate-50 dark:bg-slate-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -197,13 +197,13 @@ const TargetAudienceSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
             Perfeito para{' '}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               qualquer negócio
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Descubra como o MepChat pode transformar o atendimento em diferentes segmentos
             e impulsionar os resultados da sua empresa.
           </p>
@@ -223,18 +223,18 @@ const TargetAudienceSection: React.FC = () => {
               whileHover={{ y: -5, scale: 1.02 }}
               className={`p-6 rounded-xl cursor-pointer transition-all duration-300 ${
                 activeSegment === index
-                  ? 'bg-white dark:bg-gray-900 shadow-lg ring-2 ring-primary'
-                  : 'bg-white dark:bg-gray-900 shadow-md hover:shadow-lg'
+                  ? 'bg-white dark:bg-slate-800 shadow-lg ring-2 ring-primary'
+                  : 'bg-white dark:bg-slate-800 shadow-md hover:shadow-lg'
               }`}
               onClick={() => setActiveSegment(index)}
             >
               <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${segment.color} flex items-center justify-center text-white mb-4`}>
                 {segment.icon}
               </div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">
                 {segment.title}
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-slate-600 dark:text-slate-400">
                 {segment.description}
               </p>
             </motion.div>
@@ -247,34 +247,34 @@ const TargetAudienceSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 lg:p-12"
+          className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 lg:p-12"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
               <div className="flex items-center mb-6">
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${segments[activeSegment].color} flex items-center justify-center text-white mr-4`}>
-                  {React.cloneElement(segments[activeSegment].icon as React.ReactElement<any>, {
+                  {React.cloneElement(segments[activeSegment].icon as React.ReactElement<React.SVGProps<SVGSVGElement>>, {
                     className: 'w-8 h-8'
                   })}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
                     {segments[activeSegment].title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-slate-600 dark:text-slate-400">
                     {segments[activeSegment].description}
                   </p>
                 </div>
               </div>
 
               <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
                   Casos de Uso Principais:
                 </h4>
                 <ul className="space-y-2">
                   {segments[activeSegment].useCases.map((useCase, index) => (
-                    <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
+                    <li key={index} className="flex items-center text-slate-600 dark:text-slate-300">
                       <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
                       <span>{useCase}</span>
                     </li>
@@ -283,12 +283,12 @@ const TargetAudienceSection: React.FC = () => {
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
                   Benefícios Comprovados:
                 </h4>
                 <ul className="space-y-2">
                   {segments[activeSegment].benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
+                    <li key={index} className="flex items-center text-slate-600 dark:text-slate-300">
                       <div className="w-2 h-2 bg-secondary rounded-full mr-3"></div>
                       <span>{benefit}</span>
                     </li>
@@ -301,7 +301,7 @@ const TargetAudienceSection: React.FC = () => {
             <div className="relative">
               <div className={`aspect-square rounded-2xl bg-gradient-to-br ${segments[activeSegment].color} p-8 flex items-center justify-center`}>
                 <div className="text-center text-white">
-                  {React.cloneElement(segments[activeSegment].icon as React.ReactElement<any>, {
+                  {React.cloneElement(segments[activeSegment].icon as React.ReactElement<React.SVGProps<SVGSVGElement>>, {
                     className: 'w-24 h-24 mx-auto mb-4 opacity-80'
                   })}
                   <h4 className="text-2xl font-bold mb-2">
@@ -314,10 +314,10 @@ const TargetAudienceSection: React.FC = () => {
               </div>
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center">
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-white dark:bg-slate-700 rounded-full shadow-lg flex items-center justify-center">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               </div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center">
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-white dark:bg-slate-700 rounded-full shadow-lg flex items-center justify-center">
                 <div className="text-primary font-bold text-sm">24/7</div>
               </div>
             </div>

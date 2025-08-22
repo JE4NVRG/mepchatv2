@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Users, Zap, ArrowRight, Play, X } from 'lucide-react';
+import { MessageCircle, Zap, ArrowRight, X } from 'lucide-react';
 import { trackCTAClick, trackSectionView } from '../utils/analytics';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -15,13 +15,13 @@ const HeroSection: React.FC = () => {
   }, [isVisible]);
 
   const handlePrimaryCTA = () => {
-    trackCTAClick('Começar Gratuitamente', 'Hero Primary');
+    trackCTAClick('Testar grátis por 5 dias', 'Hero Primary');
     window.open('https://mepchat.agenciamep.com/cadastro', '_blank');
   };
 
   const handleSecondaryCTA = () => {
-    trackCTAClick('Ver Demonstração', 'Hero Secondary');
-    setShowVideo(true);
+    trackCTAClick('Falar com especialista', 'Hero Secondary');
+    window.open('https://wa.me/SEU_NUMERO?text=Quero%20testar%20o%20MepChat', '_blank');
   };
 
   const containerVariants = {
@@ -103,25 +103,24 @@ const HeroSection: React.FC = () => {
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 dark:text-slate-100 mb-6 leading-tight"
           >
             Transforme seu{' '}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               WhatsApp
-            </span>
-            {' '}em uma{' '}
-            <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
-              máquina de vendas
-            </span>
+            </span>{' '}
+            em uma central de vendas
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
             variants={itemVariants}
-            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Gerencie múltiplos atendentes, organize por setores, mantenha histórico completo e muito mais. 
-            <strong className="text-primary">Tudo em um só lugar.</strong>
+            Gerencie múltiplos atendentes, organize setores e aumente suas vendas com o MepChat.
+            <span className="block mt-2 font-semibold text-primary">
+              ✓ Funciona com CPF e CNPJ • ✓ Teste grátis por 5 dias
+            </span>
           </motion.p>
 
           {/* Key Benefits */}
@@ -129,17 +128,16 @@ const HeroSection: React.FC = () => {
             variants={itemVariants}
             className="flex flex-wrap justify-center gap-6 mb-10"
           >
-            <div className="flex items-center text-gray-700 dark:text-gray-300">
-              <Users className="w-5 h-5 text-primary mr-2" />
-              <span className="font-medium">Múltiplos Atendentes</span>
+            <div className="flex items-center text-slate-700 dark:text-slate-300">
+              <span className="font-medium">+65.000 atendimentos</span>
             </div>
-            <div className="flex items-center text-gray-700 dark:text-gray-300">
-              <MessageCircle className="w-5 h-5 text-secondary mr-2" />
-              <span className="font-medium">Organização por Setores</span>
+            <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
+            <div className="flex items-center text-slate-700 dark:text-slate-300">
+              <span className="font-medium">+400 clientes</span>
             </div>
-            <div className="flex items-center text-gray-700 dark:text-gray-300">
-              <Zap className="w-5 h-5 text-primary mr-2" />
-              <span className="font-medium">Histórico Completo</span>
+            <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
+            <div className="flex items-center text-slate-700 dark:text-slate-300">
+              <span className="font-medium">97% de satisfação</span>
             </div>
           </motion.div>
 
@@ -154,7 +152,7 @@ const HeroSection: React.FC = () => {
               onClick={handlePrimaryCTA}
               className="btn-primary px-8 py-4 text-lg font-semibold flex items-center group"
             >
-              Começar Gratuitamente
+              Testar grátis por 5 dias
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
 
@@ -162,19 +160,19 @@ const HeroSection: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleSecondaryCTA}
-              className="flex items-center px-8 py-4 text-lg font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors group"
+              className="flex items-center px-8 py-4 text-lg font-semibold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors group"
             >
-              <div className="w-12 h-12 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mr-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                <Play className="w-5 h-5 text-primary ml-1" />
+              <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center mr-3 shadow-lg group-hover:shadow-xl transition-shadow">
+                <MessageCircle className="w-5 h-5 text-primary" />
               </div>
-              Ver Demonstração
+              Falar com especialista
             </motion.button>
           </motion.div>
 
           {/* Social Proof */}
           <motion.div
             variants={itemVariants}
-            className="text-center text-gray-600 dark:text-gray-400"
+            className="text-center text-slate-600 dark:text-slate-300"
           >
             <p className="text-sm mb-4">Mais de 400 empresas já confiam no MepChat</p>
             <div className="flex justify-center items-center space-x-8 opacity-60">

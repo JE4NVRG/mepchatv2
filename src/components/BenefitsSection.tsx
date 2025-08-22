@@ -23,46 +23,46 @@ const BenefitsSection: React.FC = () => {
   const benefits: Benefit[] = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Múltiplos Atendentes",
-      description: "Gerencie toda sua equipe de atendimento em um só lugar",
+      title: "Um número, vários atendentes",
+      description: "Equipe atende junto, sem revezar celular",
       features: [
-        "Adicione quantos atendentes precisar",
-        "Controle de permissões por usuário",
-        "Monitoramento em tempo real",
-        "Relatórios de performance individual"
+        "Múltiplos atendentes no mesmo número",
+        "Sem necessidade de passar o celular",
+        "Atendimento simultâneo e organizado",
+        "Controle total da equipe"
       ]
     },
     {
       icon: <Building2 className="w-8 h-8" />,
-      title: "Organização por Setores",
-      description: "Divida seu atendimento por departamentos e especialidades",
+      title: "Setores organizados",
+      description: "Vendas, Financeiro, Pós‑venda",
       features: [
-        "Vendas, Suporte, Financeiro e mais",
-        "Roteamento automático de mensagens",
-        "Especialização por setor",
-        "Métricas específicas por área"
+        "Divisão clara por departamentos",
+        "Roteamento automático",
+        "Especialização por área",
+        "Fluxo de trabalho otimizado"
       ]
     },
     {
       icon: <History className="w-8 h-8" />,
-      title: "Histórico Completo",
-      description: "Nunca perca uma conversa importante com seus clientes",
+      title: "Histórico com protocolos",
+      description: "Nunca mais perca orçamentos",
       features: [
-        "Histórico ilimitado de conversas",
-        "Busca avançada por período",
-        "Backup automático na nuvem",
-        "Acesso de qualquer dispositivo"
+        "Histórico completo de conversas",
+        "Sistema de protocolos",
+        "Busca rápida por cliente",
+        "Backup automático seguro"
       ]
     },
     {
       icon: <CreditCard className="w-8 h-8" />,
-      title: "Identificação CPF/CNPJ",
-      description: "Identifique automaticamente seus clientes e prospects",
+      title: "CPF e CNPJ",
+      description: "Use com MEI ou empresa, sem burocracia",
       features: [
-        "Validação automática de documentos",
-        "Integração com bases de dados",
-        "Perfil completo do cliente",
-        "Histórico de compras e interações"
+        "Funciona para pessoa física e jurídica",
+        "Sem complicações burocráticas",
+        "Ideal para MEI e empresas",
+        "Configuração simples e rápida"
       ]
     }
   ];
@@ -94,7 +94,7 @@ const BenefitsSection: React.FC = () => {
     <section
       id="benefits"
       ref={ref}
-      className="py-20 bg-white dark:bg-gray-900"
+      className="py-20 bg-white dark:bg-slate-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -103,13 +103,13 @@ const BenefitsSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
             Por que escolher o{' '}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               MepChat?
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Descubra como nossa plataforma pode revolucionar seu atendimento ao cliente
             e aumentar suas vendas de forma significativa.
           </p>
@@ -137,10 +137,10 @@ const BenefitsSection: React.FC = () => {
 
               {/* Content */}
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -150,7 +150,7 @@ const BenefitsSection: React.FC = () => {
                 {benefit.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="flex items-start text-sm text-gray-600 dark:text-gray-400"
+                    className="flex items-start text-sm text-slate-700 dark:text-slate-300"
                   >
                     <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <span>{feature}</span>
@@ -171,7 +171,7 @@ const BenefitsSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
             Pronto para transformar seu atendimento?
           </p>
           <motion.button

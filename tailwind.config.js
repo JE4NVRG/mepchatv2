@@ -70,6 +70,21 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.text-base-light': {
+          '@apply text-slate-700 dark:text-slate-300': {},
+        },
+        '.surface': {
+          '@apply bg-white dark:bg-slate-800': {},
+        },
+        '.border-base': {
+          '@apply border-slate-200 dark:border-slate-700': {},
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
   darkMode: 'class',
 }
