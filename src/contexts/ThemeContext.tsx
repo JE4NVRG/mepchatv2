@@ -12,9 +12,9 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const useThemeProvider = () => {
+const useThemeProvider = () => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('theme');
@@ -47,7 +47,7 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const themeValue = useThemeProvider();
   
   return (
@@ -56,3 +56,5 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     </ThemeContext.Provider>
   );
 };
+
+export { ThemeContext, ThemeProvider };
