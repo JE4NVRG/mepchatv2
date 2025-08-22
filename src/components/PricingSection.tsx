@@ -156,10 +156,14 @@ const PricingSection: React.FC = () => {
               whileHover={{ y: -10, scale: 1.02 }}
               className={`relative rounded-2xl p-8 transition-all duration-300 ${
                 plan.highlighted
-                  ? 'bg-gradient-to-b from-primary to-secondary text-white shadow-2xl scale-105'
+                  ? 'bg-gradient-to-b from-blue-600 to-green-500 shadow-2xl scale-105'
                   : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl'
               }`}
             >
+              {/* Overlay para melhor contraste no tema claro */}
+              {plan.highlighted && (
+                <div className="absolute inset-0 bg-black/20 dark:bg-transparent rounded-2xl" />
+              )}
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -170,7 +174,7 @@ const PricingSection: React.FC = () => {
               )}
 
               {/* Plan Header */}
-              <div className="text-center mb-8">
+              <div className={`text-center mb-8 ${plan.highlighted ? 'relative' : ''}`}>
                 <div className={`w-12 h-12 mx-auto mb-4 rounded-lg flex items-center justify-center ${
                   plan.highlighted
                     ? 'bg-white/20 text-white'
@@ -178,27 +182,43 @@ const PricingSection: React.FC = () => {
                 }`}>
                   {plan.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+                <h3 className={`text-2xl font-bold mb-2 ${
+                  plan.highlighted
+                    ? 'text-white dark:text-slate-100'
+                    : 'text-slate-900 dark:text-slate-100'
+                }`}>
                   {plan.name}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 mb-6">
+                <p className={`mb-6 ${
+                  plan.highlighted
+                    ? 'text-white dark:text-slate-100 opacity-90'
+                    : 'text-slate-600 dark:text-slate-300'
+                }`}>
                   {plan.description}
                 </p>
-                <span className="text-4xl font-bold text-slate-900 dark:text-slate-100">
+                <span className={`text-4xl font-bold ${
+                  plan.highlighted
+                    ? 'text-white dark:text-slate-100'
+                    : 'text-slate-900 dark:text-slate-100'
+                }`}>
                   {plan.price}
                 </span>
-                <span className="text-slate-600 dark:text-slate-300 ml-2">
+                <span className={`ml-2 ${
+                  plan.highlighted
+                    ? 'text-white dark:text-slate-100'
+                    : 'text-slate-600 dark:text-slate-300'
+                }`}>
                   /mês
                 </span>
                 {(plan.name === 'Start' || plan.name === 'Pro') && (
                   <>
                     <div className={`text-xs mt-2 ${
-                      plan.highlighted ? 'text-white/70' : 'text-slate-500 dark:text-slate-400'
+                      plan.highlighted ? 'text-white dark:text-slate-100 opacity-90' : 'text-slate-500 dark:text-slate-400'
                     }`}>
                       Add-ons: Conexão extra R$150 • Usuário extra R$35
                     </div>
                     <div className={`text-xs mt-1 ${
-                      plan.highlighted ? 'text-white/70' : 'text-slate-500 dark:text-slate-400'
+                      plan.highlighted ? 'text-white dark:text-slate-100 opacity-90' : 'text-slate-500 dark:text-slate-400'
                     }`}>
                       O mesmo atendente pode atuar em vários números (com conexões extras).
                     </div>
@@ -207,27 +227,30 @@ const PricingSection: React.FC = () => {
               </div>
 
               {/* Features List */}
-              <ul className="space-y-3 mb-8">
+              <ul className={`space-y-3 mb-8 ${plan.highlighted ? 'relative' : ''}`}>
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-700 dark:text-slate-300">{feature}</span>
+                    <span className={plan.highlighted ? 'text-white dark:text-slate-300' : 'text-slate-700 dark:text-slate-300'}>{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {/* CTA Button */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 ${
-                  plan.popular
-                    ? 'bg-primary text-white hover:bg-primary/90'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-700'
-                }`}
-              >
-                {plan.ctaText}
-              </motion.button>
+              <div className={plan.highlighted ? 'relative' : ''}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleCTAClick(plan.name, plan.ctaLink)}
+                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 ${
+                    plan.highlighted
+                      ? 'bg-white text-primary hover:bg-slate-100 shadow-lg'
+                      : 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg'
+                  }`}
+                >
+                  {plan.ctaText}
+                </motion.button>
+              </div>
             </motion.div>
           ))}
         </motion.div>
