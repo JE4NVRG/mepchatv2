@@ -4,6 +4,7 @@ import { Star, Users, MessageCircle, TrendingUp, Quote } from 'lucide-react';
 import { trackSectionView } from '../utils/analytics';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { formatMetric } from '../utils/format';
+import OptimizedImage from './OptimizedImage';
 // Avatares SVG serão referenciados diretamente pelos caminhos públicos
 
 interface Metric {
@@ -189,10 +190,12 @@ const SocialProofSection: React.FC = () => {
       
       {/* Author */}
       <div className="flex items-center">
-        <img 
+        <OptimizedImage 
           src={testimonial.avatar} 
           alt={`Avatar de ${testimonial.name}`}
           className="h-12 w-12 rounded-full ring-2 ring-primary-500 mr-4 object-cover"
+          width={48}
+          height={48}
         />
         <div>
           <h4 className="font-semibold text-slate-900 dark:text-slate-100">
