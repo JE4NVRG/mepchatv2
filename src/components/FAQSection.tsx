@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 import { trackSectionView } from '../utils/analytics';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { Helmet } from 'react-helmet-async';
 
 interface FAQ {
   question: string;
@@ -63,6 +64,20 @@ const FAQSection: React.FC = () => {
     }
   ];
 
+  // Dados estruturados JSON-LD para FAQPage
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -91,11 +106,17 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section
-      id="faq"
-      ref={ref}
-      className="py-20 bg-slate-50 dark:bg-slate-800"
-    >
+    <>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqStructuredData)}
+        </script>
+      </Helmet>
+      <section
+        id="faq"
+        ref={ref}
+        className="py-20 bg-slate-50 dark:bg-slate-800"
+      >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -297,6 +318,7 @@ const FAQSection: React.FC = () => {
         </motion.div>
       </div>
     </section>
+    </>
   );
 };
 

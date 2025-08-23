@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mepchat.com/sitemap.xml
+
+# Disallow crawling of development files
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vite.config.ts
+Disallow: /tsconfig.json
+Disallow: /tailwind.config.js
+Disallow: /postcss.config.js
+
+# Allow crawling of important assets
+Allow: /favicon.ico
+Allow: /manifest.json
+Allow: /icon-*.png
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.webp
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
